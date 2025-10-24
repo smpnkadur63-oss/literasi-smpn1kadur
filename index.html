@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>E-Digital Literasi SMPN 1 Kadur</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <img src="logo.png" alt="logo" class="logo"/>
+    <div>
+      <div class="title">E-Digital Literasi SMPN 1 Kadur</div>
+      <div class="subtitle">Melek Digital, Cerdas Bermedia!</div>
+    </div>
+    <div style="margin-left:auto;color:white;font-weight:600" id="user-display"></div>
+  </header>
+
+  <main class="container">
+
+<div class="hero">
+  <div class="left">
+    <h1>Melek Digital, Cerdas Bermedia!</h1>
+    <p>Halo Sobat Literasi! 👋 Selamat datang di Program E-Digital Literasi SMPN 1 Kadur. Jelajahi 6 modul interaktif, buat karya digital, dan raih E-Sertifikat!</p>
+    <div style="margin-top:12px">
+      <a class="btn btn-primary" href="login.html">Mulai Literasi</a>
+      <a class="btn btn-ghost" href="modules/module1.html" style="margin-left:8px">Lihat Modul</a>
+    </div>
+    <div style="margin-top:10px" class="small">Tips: Gunakan perangkat dengan koneksi stabil. Klik tombol di kanan atas untuk mengontrol musik.</div>
+  </div>
+  <div style="width:240px;text-align:center">
+    <img src="logo.png" alt="logo" style="max-width:160px"/>
+    <div style="margin-top:12px">
+      <button id="audio-toggle" class="btn btn-ghost" style="margin-top:8px">Play Music</button>
+      <!-- Audio: replace placeholder-music.mp3 with your file in the same folder -->
+      <audio id="bg-audio" autoplay loop playsinline> src="bg-music.wav" loop></audio>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:18px" class="card">
+  <h3>Fitur Utama</h3>
+  <div class="grid">
+    <div class="card"><div class="icon">1</div><h3>Modul Interaktif</h3><div class="small">6 modul ringkas & seru untuk siswa.</div></div>
+    <div class="card"><div class="icon">2</div><h3>Kuis & Tugas</h3><div class="small">Setiap modul ada kuis singkat (Google Form).</div></div>
+    <div class="card"><div class="icon">3</div><h3>Galeri Karya</h3><div class="small">Upload poster, video, dan infografis siswa.</div></div>
+    <div class="card"><div class="icon">4</div><h3>Sertifikat Digital</h3><div class="small">Sertifikat otomatis setelah menyelesaikan modul.</div></div>
+  </div>
+</div>
+
+  </main>
+
+  <footer class="footer">
+    © 2025 SMP Negeri 1 Kadur – Program Literasi Digital
+  </footer>
+
+  <script src="assets/script.js"></script>
+
+<script>
+// Try to play audio on user interaction if autoplay is blocked
+function tryPlayAudio(){
+  const a = document.getElementById("bg-audio");
+  if(!a) return;
+  a.play().catch(()=>{ /* autoplay blocked; will play on first user gesture */ });
+}
+document.addEventListener('click', tryPlayAudio, {once:true});
+document.addEventListener('keydown', tryPlayAudio, {once:true});
+window.addEventListener('load', function(){ tryPlayAudio(); });
+</script>
+
+</body>
+</html>
